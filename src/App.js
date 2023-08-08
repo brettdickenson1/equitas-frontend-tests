@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Launches from "./components/Launches";
 import { Button, Container } from "@mui/material";
 import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
@@ -89,7 +89,7 @@ function App() {
     };
   }
 
-  const fetchData = async (pageNumber) => {
+  const fetchData = useCallback(async (pageNumber) => {
     try {
       const response = await fetch(apiUrl, {
         method: "POST",
@@ -109,11 +109,11 @@ function App() {
     } catch (error) {
       console.error("Error fetching data:", error);
     }
-  };
+  }, []);
 
   useEffect(() => {
     fetchData(currentPage);
-  }, []);
+  }, [fetchData, currentPage]);
 
   const nextPage = () => {
     setCurrentPage(currentPage + 1);
