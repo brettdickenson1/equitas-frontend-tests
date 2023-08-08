@@ -1,3 +1,58 @@
 .App {
   text-align: center;
 }
+
+.loading {
+  color: white;
+  font-size: 30px;
+}
+
+.container {
+  background-image: url(./assets/images/spaceX-background.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  overflow: scroll;
+
+  .totalLaunches {
+    color: white;
+    font-size: 25px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    font-weight: 900;
+  }
+  .innerContainer {
+    .buttonContainer {
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: repeat(4, 1fr);
+      margin-bottom: 20px;
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (min-height: 800px) and (min-width: 1200px) {
+  .container {
+    .totalLaunches {
+      font-size: 35px;
+      padding-top: 50px;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    .innerContainer {
+      .buttonContainer {
+        grid-template-columns: repeat(2, 1fr);
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

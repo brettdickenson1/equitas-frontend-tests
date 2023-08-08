@@ -1,5 +1,30 @@
-
-.launchTitle{
+.launchCard {
+  padding: 20px;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  .bottomHalf {
+    line-height: 25px;
+  }
+  .launchTitle {
     font-weight: bold;
-    font-size: large;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .launchID,
+  .flightNumber,
+  .launchDate {
+    font-size: 14px;
+    align-items: center;
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: 280px) {
+  .launchCard {
+    .launchID,
+    .flightNumber,
+    .launchDate {
+      font-size: 11px;
+    }
+  }
 }
